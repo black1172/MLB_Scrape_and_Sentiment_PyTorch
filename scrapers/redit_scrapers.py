@@ -6,13 +6,17 @@ from config import REDDIT_CONFIG
 
 class RedditScraper:
     def __init__(self):
-        # TODO: Initialize Reddit connection
-        pass
+        # Create Reddit connection using PRAW
+        self.reddit = praw.Reddit(
+        client_id=REDDIT_CONFIG[0],        
+        client_secret=REDDIT_CONFIG[1],    
+        user_agent=REDDIT_CONFIG[2]        
+    )
     
     # NOTE: '->' denotes the function return type
     def get_posts(self, subreddit_names: List[str], limit: int) -> List[ContentItem]:
-        # TODO: Scrape posts from subreddits
-        pass
+        for subreddit_name in subreddit_names:
+
     
     def get_comments(self, post_id: str, limit: int) -> List[ContentItem]:
         # TODO: Get comments from a specific post
