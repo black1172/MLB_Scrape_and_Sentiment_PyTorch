@@ -15,7 +15,7 @@ class RedditScraper:
     
     # NOTE: '->' denotes the function return type
     def get_posts(self, subreddit_names: List[str], limit: int) -> List[ContentItem]:
-        for subreddit_name in subreddit_names:
+        for subreddit_name, i in enumerate(subreddit_names):
 
     
     def get_comments(self, post_id: str, limit: int) -> List[ContentItem]:
